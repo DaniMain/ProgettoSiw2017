@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-la migliore galleria di arte moderna
+<h1 class="cover-heading">La migliore galleria di arte moderna</h1>
+<img alt="l'ultima cena di michelangelo" 
+	src="http://www.scudit.net/mdleonardo_file/cenacolo100.jpg">
 </body>
 </html>
