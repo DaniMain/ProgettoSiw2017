@@ -70,7 +70,7 @@
 							<li class="${current == 'index' ? 'active' : ''}">
 								<a href='<spring:url value="/" />'>Home</a></li>
 							<li><a href="#about">Users</a></li>
-							<li><a href="#contact">My account</a></li>
+							<li><a href="#contact">Il mio account</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">Naviga per<span class="caret"></span></a>
@@ -82,6 +82,7 @@
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right navbar-default">
+							<li><a href="#">Registrati</a></li>
 							<li><a href="#">Login</a></li>
 							<li><a href="#">Logout</a></li>
 						</ul>

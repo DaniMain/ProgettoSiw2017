@@ -136,7 +136,7 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("'>Home</a></li>\r\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"#about\">Users</a></li>\r\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"#contact\">My account</a></li>\r\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#contact\">Il mio account</a></li>\r\n");
       out.write("\t\t\t\t\t\t\t<li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\"\r\n");
       out.write("\t\t\t\t\t\t\t\tdata-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\"\r\n");
       out.write("\t\t\t\t\t\t\t\taria-expanded=\"false\">Naviga per<span class=\"caret\"></span></a>\r\n");
@@ -148,6 +148,7 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t</li>\r\n");
       out.write("\t\t\t\t\t\t</ul>\r\n");
       out.write("\t\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right navbar-default\">\r\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\">Registrati</a></li>\r\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"#\">Login</a></li>\r\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"#\">Logout</a></li>\r\n");
       out.write("\t\t\t\t\t\t</ul>\r\n");
