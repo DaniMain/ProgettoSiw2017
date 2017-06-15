@@ -12,7 +12,7 @@ public class Opera {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	private String titolo;
 	private Date anno;
 	private String tecinca;
@@ -20,10 +20,10 @@ public class Opera {
 	@ManyToOne
 	private Autore autore;
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getTitolo() {

@@ -5,6 +5,8 @@
 <html lang="en">
 <head>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -40,20 +42,22 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title" /></title>
-<!-- Custom styles for this template -->
+<!-- Custom styles for this template
 <link href="http://getbootstrap.com/examples/cover/cover.css"
-	rel="stylesheet">
+	rel="stylesheet">  -->
 </head>
 
 <body>
 
-<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
-<tilesx:useAttribute name="current" />
+	<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"
+		prefix="tilesx"%>
+	<tilesx:useAttribute name="current" />
 
 	<div class="navbar-wrapper">
 		<div class="container">
 
-			<nav class="navbar navbar-inverse navbar-static-top navbar-default navbar-fixed-top">
+			<nav
+				class="navbar navbar-inverse navbar-static-top navbar-default navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed"
@@ -67,39 +71,58 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="${current == 'index' ? 'active' : ''}">
-								<a href='<spring:url value="/" />'>Home</a></li>
-							<li><a href="#about">Users</a></li>
-							<li><a href="#contact">Il mio account</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-haspopup="true"
-								aria-expanded="false">Naviga per<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Autore dell'opera</a></li>
-									<li ><a href="#">Anno di realizzazione</a></li>
-									<li><a href="#">Tecnica</a></li>
-								</ul>
-							</li>
+							<li class="${current == 'index' ? 'active' : ''}"><a
+								href='<spring:url value="/" />'>Home</a></li>
+
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+								<li class="${current == 'users' ? 'active' : ''}"><a
+									href='<spring:url value="/users.html"/>'>Utenti</a></li>
+							</security:authorize>
+
+							<security:authorize access="isAuthenticated()">
+								<li><a href="#account.html">Il mio account</a></li>
+							</security:authorize>
+
+							<security:authorize access="isAuthenticated()">
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Naviga per<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Autore dell'opera</a></li>
+										<li><a href="#">Anno di realizzazione</a></li>
+										<li><a href="#">Tecnica</a></li>
+									</ul></li>
+							</security:authorize>
 						</ul>
 						<ul class="nav navbar-nav navbar-right navbar-default">
-							<li><a href="#">Registrati</a></li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Logout</a></li>
+							<security:authorize access="! isAuthenticated()">
+								<li class="${current == 'register' ? 'active' : ''}"><a
+									href='<spring:url value="/login.html"/>'>Login</a></li>
+							</security:authorize>
+
+							<security:authorize access="!isAuthenticated()">
+								<li class="${current == 'register' ? 'active' : ''}"><a
+									href="#">Registrati</a></li>
+							</security:authorize>
+
+							<security:authorize access="isAuthenticated()">
+								<li><a href='<spring:url value="/logout"/>'>Logout</a></li>
+							</security:authorize>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</div>
-	
+
 	<br>
 	<br>
 	<br>
 
 	<div class="container">
-	<div class="inner cover">
-		<tiles:insertAttribute name="body" />
-	</div>
+		<div class="inner cover">
+			<tiles:insertAttribute name="body" />
+		</div>
 	</div>
 
 	<br>

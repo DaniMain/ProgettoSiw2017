@@ -49,9 +49,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<h1 class=\"cover-heading\">La migliore galleria di arte moderna</h1>\r\n");
-      out.write("<img alt=\"l'ultima cena di michelangelo\" \r\n");
-      out.write("\tsrc=\"http://www.scudit.net/mdleonardo_file/cenacolo100.jpg\">\r\n");
+      out.write("\t<center>\r\n");
+      out.write("\t\t<h1 class=\"cover-heading\">La migliore galleria di arte moderna</h1>\r\n");
+      out.write("\t\t<img alt=\"l'ultima cena di michelangelo\"\r\n");
+      out.write("\t\t\tsrc=\"http://www.scudit.net/mdleonardo_file/cenacolo100.jpg\">\r\n");
+      out.write("\t</center>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

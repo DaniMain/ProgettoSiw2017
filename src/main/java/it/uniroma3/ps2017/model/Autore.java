@@ -13,7 +13,7 @@ public class Autore {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	private String nome;
 	private String cognome;
 	private String nazione;
@@ -22,10 +22,10 @@ public class Autore {
 	@OneToMany(mappedBy="autore")
 	private List<Opera> opere;
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNome() {

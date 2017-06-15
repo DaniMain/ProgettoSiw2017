@@ -4,5 +4,6 @@
 		<class>it.uniroma3.ps2017.model.Autore</class>
 		<class>it.uniroma3.ps2017.model.Opera</class>
 		<class>it.uniroma3.ps2017.model.Utente</class>
+		<class>it.uniroma3.ps2017.model.Role</class>
 	</persistence-unit>
 </persistence>

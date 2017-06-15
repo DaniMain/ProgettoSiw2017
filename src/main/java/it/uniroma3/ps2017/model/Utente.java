@@ -1,28 +1,34 @@
 package it.uniroma3.ps2017.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Utente {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	private String nome;
 	private String cognome;
 	private String username;
 	private String password;
 	private Date dataNascita;
 	private boolean amministratore;
+	@ManyToMany
+	@JoinTable
+	private List<Role> ruoli;
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -60,6 +66,12 @@ public class Utente {
 	}
 	public void setAmministratore(boolean amministratore) {
 		this.amministratore = amministratore;
+	}
+	public List<Role> getRuoli() {
+		return ruoli;
+	}
+	public void setRuoli(List<Role> ruoli) {
+		this.ruoli = ruoli;
 	}
 
 }
