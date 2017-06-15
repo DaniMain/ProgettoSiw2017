@@ -5,4 +5,6 @@ import it.uniroma3.ps2017.model.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Integer>{
 
+	Role findByRole(String role);
+
 }

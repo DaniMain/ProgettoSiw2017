@@ -101,8 +101,8 @@
 							</security:authorize>
 
 							<security:authorize access="!isAuthenticated()">
-								<li class="${current == 'register' ? 'active' : ''}"><a
-									href="#">Registrati</a></li>
+								<li class="${current == 'register' ? 'active' : ''}">
+									<a href='<spring:url value="/register.html"/>'>Register</a></li>
 							</security:authorize>
 
 							<security:authorize access="isAuthenticated()">

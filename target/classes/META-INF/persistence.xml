@@ -3,7 +3,7 @@
 	<persistence-unit name="ProgettoSiw2017">
 		<class>it.uniroma3.ps2017.model.Autore</class>
 		<class>it.uniroma3.ps2017.model.Opera</class>
-		<class>it.uniroma3.ps2017.model.Utente</class>
 		<class>it.uniroma3.ps2017.model.Role</class>
+		<class>it.uniroma3.ps2017.model.Utente</class>
 	</persistence-unit>
 </persistence>

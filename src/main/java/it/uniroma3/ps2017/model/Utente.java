@@ -24,6 +24,7 @@ public class Utente {
 	@ManyToMany
 	@JoinTable
 	private List<Role> ruoli;
+	private boolean enabled;
 	
 	public int getId() {
 		return id;
@@ -72,6 +73,12 @@ public class Utente {
 	}
 	public void setRuoli(List<Role> ruoli) {
 		this.ruoli = ruoli;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }

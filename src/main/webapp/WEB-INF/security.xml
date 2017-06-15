@@ -24,7 +24,7 @@
 											   join utente_role on utente.id = utente_role.utenti_id
 											   join role on utente_role.ruoli_id = role.id
 											   where utente.username = ?"
-				users-by-username-query="select username,password,1 from utente where username = ?"/>
+				users-by-username-query="select username,password,enabled from utente where username = ?"/>
 		</authentication-provider>
 	</authentication-manager>
 
