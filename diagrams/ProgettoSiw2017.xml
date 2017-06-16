@@ -26,7 +26,7 @@
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
 		<entity-X-Coordinate>449</entity-X-Coordinate>
-		<entity-Y-Coordinate>333</entity-Y-Coordinate>
+		<entity-Y-Coordinate>343</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -35,7 +35,7 @@
 	<entity>
 		<entity-name>it.uniroma3.ps2017.model.Utente</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>246</entity-height>
+		<entity-height>266</entity-height>
 		<entity-X-Coordinate>90</entity-X-Coordinate>
 		<entity-Y-Coordinate>283</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
