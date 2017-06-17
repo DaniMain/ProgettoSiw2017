@@ -80,7 +80,8 @@
 							</security:authorize>
 
 							<security:authorize access="isAuthenticated()">
-								<li><a href="#account.html">Il mio account</a></li>
+								<li class="${current == 'users' ? 'active' : ''}"><a
+									href='<spring:url value="/account.html"/>'>Il mio account</a></li>
 							</security:authorize>
 
 							<security:authorize access="isAuthenticated()">
@@ -93,6 +94,18 @@
 										<li><a href="#">Tecnica</a></li>
 									</ul></li>
 							</security:authorize>
+
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Carica<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li class="${current == 'load-image' ? 'active' : ''}"><a
+											href='<spring:url value="/caricaOpera.html"/>'>Opera</a></li>
+										<li class="${current == 'load-author' ? 'active' : ''}"><a
+											href='<spring:url value="/caricaAutore.html"/>'>Autore</a></li>
+									</ul></li>
+							</security:authorize>
 						</ul>
 						<ul class="nav navbar-nav navbar-right navbar-default">
 							<security:authorize access="! isAuthenticated()">
@@ -101,8 +114,8 @@
 							</security:authorize>
 
 							<security:authorize access="!isAuthenticated()">
-								<li class="${current == 'register' ? 'active' : ''}">
-									<a href='<spring:url value="/register.html"/>'>Register</a></li>
+								<li class="${current == 'register' ? 'active' : ''}"><a
+									href='<spring:url value="/register.html"/>'>Registrati</a></li>
 							</security:authorize>
 
 							<security:authorize access="isAuthenticated()">
@@ -118,6 +131,7 @@
 	<br>
 	<br>
 	<br>
+	<br>
 
 	<div class="container">
 		<div class="inner cover">
@@ -125,7 +139,6 @@
 		</div>
 	</div>
 
-	<br>
 	<br>
 
 	<tiles:insertAttribute name="footer" />

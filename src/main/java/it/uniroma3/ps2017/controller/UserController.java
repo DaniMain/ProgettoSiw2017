@@ -1,5 +1,7 @@
 package it.uniroma3.ps2017.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,13 +18,12 @@ public class UserController {
 	
 	@Autowired
 	private UtenteService utenteService;
-	
-
+		
 	@ModelAttribute("user")
 	public Utente construct(){
 		return new Utente();
 	}
-	
+		
 	@RequestMapping("/users")
 	public String users(Model model){
 		model.addAttribute("users", utenteService.findAll());
@@ -43,8 +44,14 @@ public class UserController {
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String doRegister(@ModelAttribute("user") Utente user){
 		utenteService.save(user);
-		return "user-register";
+		return "redirect:/register.html?success=true";
 	}
-
-
+	
+	@RequestMapping("/account")
+	public String account(Model model, Principal principal){
+		String nome = principal.getName();
+		model.addAttribute("user", utenteService.findByUsername(nome));
+		return "user-detail";
+	}
+		
 }

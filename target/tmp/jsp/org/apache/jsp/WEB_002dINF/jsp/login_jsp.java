@@ -106,17 +106,21 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\r\n");
       out.write("</style>\r\n");
       out.write("\r\n");
-      out.write("<div class=\"container\">\t\r\n");
+      out.write("<div class=\"container\">\r\n");
       out.write("\t");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\t<form class=\"form-signin\" role=\"form\" action='");
+      out.write("\t<center>\r\n");
+      out.write("\t\t<h2 class=\"form-signin-heading\">Inserisci le tue credenziali</h2>\r\n");
+      out.write("\t</center>\r\n");
+      out.write("\t<form class=\"form-signin\" role=\"form\"\r\n");
+      out.write("\t\taction='");
       if (_jspx_meth_spring_url_0(_jspx_page_context))
         return;
       out.write("' method=\"post\">\r\n");
-      out.write("\t\t<h2 class=\"form-signin-heading\">Inserisci le tue credenziali</h2>\r\n");
-      out.write("\t\t\t<input type=\"text\" name=\"username\" class=\"form-control\" placeholder=\"username\" required autofocus>\r\n");
-      out.write("\t\t\t<input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"password\" required>\r\n");
+      out.write("\t\t<input type=\"text\" name=\"username\" class=\"form-control\"\r\n");
+      out.write("\t\t\tplaceholder=\"username\" required autofocus> <input\r\n");
+      out.write("\t\t\ttype=\"password\" name=\"password\" class=\"form-control\"\r\n");
+      out.write("\t\t\tplaceholder=\"password\" required>\r\n");
       out.write("\t\t<button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Entra</button>\r\n");
       out.write("\t</form>\r\n");
       out.write("\r\n");

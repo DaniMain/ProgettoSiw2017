@@ -1,6 +1,5 @@
 package it.uniroma3.ps2017.model;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -17,8 +16,8 @@ public class Autore {
 	private String nome;
 	private String cognome;
 	private String nazione;
-	private Date dataNascita;
-	private Date dataMorte;
+	private String dataNascita;
+	private String dataMorte;
 	@OneToMany(mappedBy="autore")
 	private List<Opera> opere;
 	
@@ -46,16 +45,16 @@ public class Autore {
 	public void setNazione(String nazione) {
 		this.nazione = nazione;
 	}
-	public Date getDataNascita() {
+	public String getDataNascita() {
 		return dataNascita;
 	}
-	public void setDataNascita(Date dataNascita) {
+	public void setDataNascita(String dataNascita) {
 		this.dataNascita = dataNascita;
 	}
-	public Date getDataMorte() {
+	public String getDataMorte() {
 		return dataMorte;
 	}
-	public void setDataMorte(Date dataMorte) {
+	public void setDataMorte(String dataMorte) {
 		this.dataMorte = dataMorte;
 	}
 	public List<Opera> getOpere() {

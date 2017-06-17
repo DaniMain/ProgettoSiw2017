@@ -1,6 +1,11 @@
 <%@ include file="../layout/taglib.jsp" %>
 
 <form:form commandName="user" cssClass="form-horizontal">
+	
+	<c:if test="${param.success eq true}">
+		<div class="alert alert-success">Registrazione avvenuta con successo!</div>
+	</c:if>
+
 	<div class="form-group">
 		<label for="username" class="col-sm-2 control-label">Username:</label>
 		<div class="col-sm-10">
@@ -26,8 +31,8 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<div class="col-sm-2">
-			<input type="submit" value="Save" class="btn btn-log btn-primary"/>
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="submit" value="Registrati" class="btn btn-log btn-primary"/>
 		</div>
 	</div>
 </form:form>

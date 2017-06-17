@@ -1,7 +1,5 @@
 package it.uniroma3.ps2017.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,8 +12,8 @@ public class Opera {
 	@GeneratedValue
 	private int id;
 	private String titolo;
-	private Date anno;
-	private String tecinca;
+	private String anno;
+	private String tecnica;
 	private String dimensioni;
 	@ManyToOne
 	private Autore autore;
@@ -32,17 +30,17 @@ public class Opera {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public Date getAnno() {
+	public String getAnno() {
 		return anno;
 	}
-	public void setAnno(Date anno) {
+	public void setAnno(String anno) {
 		this.anno = anno;
 	}
-	public String getTecinca() {
-		return tecinca;
+	public String getTecnica() {
+		return tecnica;
 	}
-	public void setTecinca(String tecinca) {
-		this.tecinca = tecinca;
+	public void setTecnica(String tecinca) {
+		this.tecnica = tecinca;
 	}
 	public String getDimensioni() {
 		return dimensioni;

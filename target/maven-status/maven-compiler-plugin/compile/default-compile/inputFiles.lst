@@ -9,5 +9,9 @@ C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\mod
 C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\repository\AutoreRepository.java
 C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\service\InitDbService.java
 C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\controller\LoginController.java
+C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\service\OperaService.java
+C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\controller\OperaController.java
 C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\model\Utente.java
+C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\controller\AutoreController.java
 C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\model\Opera.java
+C:\Users\User\workspace-STS\ProgettoSiw2017\src\main\java\it\uniroma3\ps2017\service\AutoreService.java

@@ -44,15 +44,19 @@
 }
 </style>
 
-<div class="container">	
+<div class="container">
 	<%-- <c:if test="${param.success eq false }">
 		<div class="alert">Username or password wrong</div>
 	</c:if> --%>
-
-	<form class="form-signin" role="form" action='<spring:url value="/login" />' method="post">
+	<center>
 		<h2 class="form-signin-heading">Inserisci le tue credenziali</h2>
-			<input type="text" name="username" class="form-control" placeholder="username" required autofocus>
-			<input type="password" name="password" class="form-control" placeholder="password" required>
+	</center>
+	<form class="form-signin" role="form"
+		action='<spring:url value="/login" />' method="post">
+		<input type="text" name="username" class="form-control"
+			placeholder="username" required autofocus> <input
+			type="password" name="password" class="form-control"
+			placeholder="password" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Entra</button>
 	</form>
 

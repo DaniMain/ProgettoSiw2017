@@ -12,14 +12,18 @@
 		<tr>
 			<td>Nome:</td> 
 			<td>${user.nome}</td>
+			<!-- non chiedeteci perché hahah lol(lo) -->
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 		</tr>
 		<tr>
 			<td>Cognome:</td> 
 			<td>${user.cognome}</td>
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 		</tr>
 		<tr>
 			<td>Data di nascita:</td> 
 			<td>${user.dataNascita}</td>
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 		</tr>
 	</tbody>
 </table>

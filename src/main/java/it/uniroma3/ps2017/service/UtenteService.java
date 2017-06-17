@@ -36,12 +36,15 @@ public class UtenteService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String password = user.getPassword();
 		user.setPassword(encoder.encode(password));
-		utenteRepository.save(user);
 		
 		List<Role> ruoli = new ArrayList<Role>();
 		ruoli.add(roleRepository.findByRole("ROLE_USER"));
 		user.setRuoli(ruoli);
 		
 		utenteRepository.save(user);
+	}
+
+	public Utente findByUsername(String nome) {
+		return utenteRepository.findByUsername(nome);
 	}
 }
