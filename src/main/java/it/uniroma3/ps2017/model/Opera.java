@@ -12,7 +12,7 @@ public class Opera {
 	@GeneratedValue
 	private int id;
 	private String titolo;
-	private String anno;
+	private Integer anno;
 	private String tecnica;
 	private String dimensioni;
 	@ManyToOne
@@ -30,10 +30,10 @@ public class Opera {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public String getAnno() {
+	public Integer getAnno() {
 		return anno;
 	}
-	public void setAnno(String anno) {
+	public void setAnno(Integer anno) {
 		this.anno = anno;
 	}
 	public String getTecnica() {

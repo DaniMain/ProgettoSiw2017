@@ -34,9 +34,9 @@
 	</div>
 	<div class="form-group">
 		<label for="autore">Autore</label> <select multiple
-			class="form-control">
+			class="form-control" name="autoreId">
 			<c:forEach items="${autori }" var="autore">
-				<option>${autore.nome} ${autore.cognome}</option>
+				<option value="${autore.id }">${autore.nome} ${autore.cognome}</option>
 			</c:forEach>
 		</select>
 	</div>

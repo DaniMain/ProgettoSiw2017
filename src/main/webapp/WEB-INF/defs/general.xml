@@ -55,9 +55,21 @@
 		<put-attribute name="current" value="brows-author" />
 	</definition>
 	
-		<definition name="author-detail" extends="common">
+	<definition name="author-detail" extends="common">
 		<put-attribute name="title" value="Autori" />
-		<put-attribute name="body" value="/WEB-INF/jsp/author-details.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/author-detail.jsp" />
 		<put-attribute name="current" value="author-detail" />
+	</definition>
+	
+	<definition name="opera-detail" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/opera-detail.jsp" />
+		<put-attribute name="current" value="opera-detail" />
+	</definition>
+	
+	<definition name="brows-anno" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-anno.jsp" />
+		<put-attribute name="current" value="brows-anno" />
 	</definition>
 </tiles-definitions>

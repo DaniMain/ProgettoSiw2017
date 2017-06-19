@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.ps2017.model.Autore;
 import it.uniroma3.ps2017.service.AutoreService;
+import it.uniroma3.ps2017.service.OperaService;
 
 @Controller
 public class AutoreController {
+	
+	@Autowired
+	private OperaService operaService;
 	
 	@Autowired
 	private AutoreService autoreService;
@@ -42,8 +46,13 @@ public class AutoreController {
 	@RequestMapping("/autoriOpera/{id}")
 	public String detail(Model model, @PathVariable int id){
 		model.addAttribute("autore", autoreService.findOne(id));
-		return "brows-author";		
+		return "author-detail";		
 	}
 	
-
+	@RequestMapping("/autoriOpera/Opera/{id}")
+	public String operaDetail(Model model, @PathVariable int id){
+		model.addAttribute("opera", operaService.findOne(id));
+		return "opera-detail";
+	}
+	
 }

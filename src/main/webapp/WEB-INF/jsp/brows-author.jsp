@@ -12,7 +12,7 @@
 		<c:forEach items="${autori}" var="autore">
 			<tr>
 				<td>
-					<a href='<spring:url value="/authors/${autore.id }.html" />'>
+					<a href='<spring:url value="/autoriOpera/${autore.id }.html" />'>
 						${autore.nome }
 					</a>
 				</td>

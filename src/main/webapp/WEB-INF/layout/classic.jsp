@@ -91,7 +91,8 @@
 									<ul class="dropdown-menu">
 										<li class="${current == 'brows-author' ? 'active' : ''}"><a 
 											href='<spring:url value="/autoriOpera.html"/>'>Autore dell'opera</a></li>
-										<li><a href="#">Anno di realizzazione</a></li>
+										<li class="${current == 'brows-anno' ? 'active' : ''}"><a
+											href='<spring:url value="/anniOpere.html"/>'>Anno di realizzazione</a></li>
 										<li><a href="#">Tecnica</a></li>
 									</ul></li>
 							</security:authorize>

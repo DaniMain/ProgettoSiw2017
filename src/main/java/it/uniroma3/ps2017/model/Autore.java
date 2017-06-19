@@ -3,9 +3,13 @@ package it.uniroma3.ps2017.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Fetch;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Autore {
