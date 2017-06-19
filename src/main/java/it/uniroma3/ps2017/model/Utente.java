@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Utente {
@@ -15,10 +18,14 @@ public class Utente {
 	@Id
 	@GeneratedValue
 	private int id;
+	@Size(min=3,message="minimo 3 caratteri")
 	private String nome;
 	private String cognome;
+	@Size(min=4,message="minimo 4 caratteri")
 	private String username;
+	@Size(min=8,message="la password deve avere minimo 8 caratteri alfanumerici")
 	private String password;
+	@Temporal(TemporalType.DATE)
 	private Date dataNascita;
 	private boolean amministratore;
 	@ManyToMany

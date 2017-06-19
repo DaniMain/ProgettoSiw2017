@@ -3,10 +3,19 @@ package it.uniroma3.ps2017.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Fetch;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Autore {
@@ -14,12 +23,18 @@ public class Autore {
 	@Id
 	@GeneratedValue
 	private int id;
+	@Size(min=1,message="deve essere non vuoto")
 	private String nome;
+	@Size(min=1,message="deve essere non vuoto")
 	private String cognome;
+	@Size(min=1,message="deve essere non vuoto")
 	private String nazione;
+	@Temporal(TemporalType.DATE)
+	@Past
 	private Date dataNascita;
+	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
-	@OneToMany(mappedBy="autore")
+	@OneToMany(mappedBy="autore", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Opera> opere;
 	
 	public int getId() {

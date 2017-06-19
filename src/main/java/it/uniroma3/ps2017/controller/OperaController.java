@@ -1,5 +1,8 @@
 package it.uniroma3.ps2017.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +41,22 @@ public class OperaController {
 		Integer autoreId = Integer.parseInt(request.getParameter("autoreId"));
 		operaService.save(opera, autoreId);
 		return "redirect:/caricaOpera.html?success=true";
+	}
+	
+	@RequestMapping("/anniOpere")
+	public String operaDetail(Model model){
+		model.addAttribute("anni", listaAnni(operaService.findAll()));
+		return "brows-anno";
+	}
+	
+	private List<Integer> listaAnni(List<Opera> opere){
+		List<Integer> anni = new ArrayList<Integer>();
+		for(Opera opera : opere){
+			if(!anni.contains(opera.getAnno())){
+				anni.add(opera.getAnno());
+			}
+		}
+		return anni;
 	}
 
 }

@@ -1,36 +1,43 @@
 package it.uniroma3.ps2017.validator;
 
-import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import it.uniroma3.ps2017.model.Utente;
+import it.uniroma3.ps2017.service.UtenteService;
 
-public class UtenteValidator {
+@Component
+public class UtenteValidator implements Validator {
+	
+	@Autowired
+	private UtenteService utenteService;
 
-	public boolean validate(Utente user, Model model) {
-		boolean ok = true;
-		// controllo username
-		if(user.getUsername()==null||user.getUsername().equals("")){
-			model.addAttribute("errUsername", "Campo vuoto");
-			ok=false;
-		}
-		// controllo cognome
-		if(user.getCognome()==null||user.getCognome().equals("")){
-			model.addAttribute("errCognome", "Campo vuoto");
-			ok=false;
-		}
-		// controllo nome
-		if(user.getNome()==null||user.getNome().equals("")){
-			model.addAttribute("errNome", "Campo vuoto");
-			ok=false;
-		}
-		// controllo nome
-		if(user.getDataNascita()==null||user.getDataNascita().equals("")){
-			model.addAttribute("errDataNascita", "Campo vuoto");
-			ok=false;
-		}
-		// settaggio data di nascita
-		
-		return ok;
+	@Override
+	public boolean supports(Class<?> aClass) {
+		return Utente.class.equals(aClass);
+	}
+
+	@Override
+	public void validate(Object o, Errors errors) {
+		Utente user = (Utente) o;
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
+        if (user.getUsername().length() < 3) {
+            errors.rejectValue("username", "Size.userForm.username");
+        }
+        if (utenteService.findByUsername(user.getUsername()) != null) {
+            errors.rejectValue("username", "Duplicate.userForm.username");
+        }
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
+        if (user.getPassword().length() < 8) {
+            errors.rejectValue("password", "Size.userForm.password");
+        }
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "NotEmpty");
+        if (user.getUsername().length() < 3) {
+            errors.rejectValue("name", "Size.userForm.userNome");
+        }		
 	}
 
 }

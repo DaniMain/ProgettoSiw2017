@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp" %>
 
+<center>
+	<h1>Utenti registrati</h1>
+</center>
+
+<br>
+
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>

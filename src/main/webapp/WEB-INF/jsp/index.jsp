@@ -8,9 +8,7 @@
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script
 	src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
-<!-- Custom styles for this template -->
-<link href="http://getbootstrap.com/examples/carousel/carousel.css"
-	rel="stylesheet">
+
 </head>
 <body style="background-color:grey">
 

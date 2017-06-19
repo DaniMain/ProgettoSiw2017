@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Opera {
@@ -11,8 +12,10 @@ public class Opera {
 	@Id
 	@GeneratedValue
 	private int id;
+	@Size(min=1,message="deve essere non vuoto")
 	private String titolo;
-	private String anno;
+	private Integer anno;
+	@Size(min=1,message="deve essere non vuoto")
 	private String tecnica;
 	private String dimensioni;
 	@ManyToOne
@@ -30,10 +33,10 @@ public class Opera {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public String getAnno() {
+	public Integer getAnno() {
 		return anno;
 	}
-	public void setAnno(String anno) {
+	public void setAnno(Integer anno) {
 		this.anno = anno;
 	}
 	public String getTecnica() {

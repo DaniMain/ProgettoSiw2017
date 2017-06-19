@@ -294,7 +294,7 @@ public final class load_002dauthor_jsp extends org.apache.jasper.runtime.HttpJsp
     _jspx_th_form_input_3.setDynamicAttribute(null, "type", new String("dataNascita"));
     _jspx_th_form_input_3.setDynamicAttribute(null, "class", new String("form-control"));
     _jspx_th_form_input_3.setPath("dataNascita");
-    _jspx_th_form_input_3.setDynamicAttribute(null, "placeholder", new String("Data di nascita"));
+    _jspx_th_form_input_3.setDynamicAttribute(null, "placeholder", new String("dd/mm/yyyy"));
     int[] _jspx_push_body_count_form_input_3 = new int[] { 0 };
     try {
       int _jspx_eval_form_input_3 = _jspx_th_form_input_3.doStartTag();
@@ -323,7 +323,7 @@ public final class load_002dauthor_jsp extends org.apache.jasper.runtime.HttpJsp
     _jspx_th_form_input_4.setDynamicAttribute(null, "type", new String("dataMorte"));
     _jspx_th_form_input_4.setDynamicAttribute(null, "class", new String("form-control"));
     _jspx_th_form_input_4.setPath("dataMorte");
-    _jspx_th_form_input_4.setDynamicAttribute(null, "placeholder", new String("Data di morte"));
+    _jspx_th_form_input_4.setDynamicAttribute(null, "placeholder", new String("dd/mm/yyyy"));
     int[] _jspx_push_body_count_form_input_4 = new int[] { 0 };
     try {
       int _jspx_eval_form_input_4 = _jspx_th_form_input_4.doStartTag();

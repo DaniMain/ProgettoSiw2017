@@ -23,5 +23,9 @@ public class AutoreService {
 	public List<Autore> findAll() {
 		return autoreRepository.findAll();
 	}
+	
+	public Autore findOne(int id){
+		return autoreRepository.findOne(id);
+	}
 
 }

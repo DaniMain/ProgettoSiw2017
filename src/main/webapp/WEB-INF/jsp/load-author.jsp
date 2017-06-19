@@ -30,12 +30,12 @@
 	<div class="form-group">
 		<label for="dataNascita">Data di nascita</label>
 		<form:input type="dataNascita" class="form-control" path="dataNascita"
-			placeholder="Data di nascita" />
+			placeholder="dd/mm/yyyy" />
 	</div>
 	<div class="form-group">
 		<label for="dataMorte">Data di morte</label>
 		<form:input type="dataMorte" class="form-control" path="dataMorte"
-			placeholder="Data di morte" />
+			placeholder="dd/mm/yyyy" />
 	</div>
 	<br>
 	<input type="submit" value="Inserisci" class="btn btn-log btn-primary" />

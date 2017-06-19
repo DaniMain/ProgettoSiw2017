@@ -29,5 +29,13 @@ public class OperaService {
 		autore.setOpere(opere);
 		operaRepository.save(opera);
 	}
+	
+	public Opera findOne(int id) {
+		return operaRepository.findOne(id);
+	}
+
+	public List<Opera> findAll() {
+		return operaRepository.findAll();
+	}
 
 }

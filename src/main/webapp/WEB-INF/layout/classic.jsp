@@ -45,6 +45,10 @@
 <!-- Custom styles for this template
 <link href="http://getbootstrap.com/examples/cover/cover.css"
 	rel="stylesheet">  -->
+	
+<!-- Per non creare problemi con la caruosel e la navbar si adotta questo template -->
+<link href="http://getbootstrap.com/examples/carousel/carousel.css"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -74,11 +78,6 @@
 							<li class="${current == 'index' ? 'active' : ''}"><a
 								href='<spring:url value="/" />'>Home</a></li>
 
-							<security:authorize access="hasRole('ROLE_ADMIN')">
-								<li class="${current == 'users' ? 'active' : ''}"><a
-									href='<spring:url value="/users.html"/>'>Utenti</a></li>
-							</security:authorize>
-
 							<security:authorize access="isAuthenticated()">
 								<li class="${current == 'users' ? 'active' : ''}"><a
 									href='<spring:url value="/account.html"/>'>Il mio account</a></li>
@@ -89,12 +88,21 @@
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Naviga per<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Autore dell'opera</a></li>
-										<li><a href="#">Anno di realizzazione</a></li>
+										<li class="${current == 'brows-author' ? 'active' : ''}"><a 
+  											href='<spring:url value="/autoriOpera.html"/>'>Autore dell'opera</a></li>
+										<li class="${current == 'brows-anno' ? 'active' : ''}"><a
+											href='<spring:url value="/anniOpere.html"/>'>Anno di realizzazione</a></li>
 										<li><a href="#">Tecnica</a></li>
+										<li class="${current == 'search' ? 'active' : ''}"><a
+											href='<spring:url value="/cerca.html"/>'>Cerca</a></li>
 									</ul></li>
 							</security:authorize>
-
+							
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+								<li class="${current == 'users' ? 'active' : ''}"><a
+									href='<spring:url value="/users.html"/>'>Utenti</a></li>
+							</security:authorize>
+							
 							<security:authorize access="hasRole('ROLE_ADMIN')">
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -107,7 +115,7 @@
 									</ul></li>
 							</security:authorize>
 						</ul>
-						<ul class="nav navbar-nav navbar-right navbar-default">
+						<ul class="nav navbar-nav navbar-right">
 							<security:authorize access="! isAuthenticated()">
 								<li class="${current == 'register' ? 'active' : ''}"><a
 									href='<spring:url value="/login.html"/>'>Login</a></li>

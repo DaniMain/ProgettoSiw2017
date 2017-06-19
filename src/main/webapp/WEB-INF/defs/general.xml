@@ -48,4 +48,40 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/load-author.jsp" />
 		<put-attribute name="current" value="load-author" />
 	</definition>
+	
+	<definition name="search" extends="common">
+		<put-attribute name="title" value="Cerca" />
+		<put-attribute name="body" value="/WEB-INF/jsp/search.jsp" />
+		<put-attribute name="current" value="search" />
+	</definition>
+	
+	<definition name="search-results" extends="common">
+		<put-attribute name="title" value="Risultati ricerca" />
+		<put-attribute name="body" value="/WEB-INF/jsp/search-results.jsp" />
+		<put-attribute name="current" value="search-results" />
+	</definition>
+		
+	<definition name="brows-author" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-author.jsp" />
+		<put-attribute name="current" value="brows-author" />
+	</definition>
+	
+	<definition name="author-detail" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/author-detail.jsp" />
+		<put-attribute name="current" value="author-detail" />
+	</definition>
+	
+	<definition name="opera-detail" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/opera-detail.jsp" />
+		<put-attribute name="current" value="opera-detail" />
+	</definition>
+	
+	<definition name="brows-anno" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-anno.jsp" />
+		<put-attribute name="current" value="brows-anno" />
+	</definition>
 </tiles-definitions>
