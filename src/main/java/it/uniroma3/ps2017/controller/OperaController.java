@@ -1,5 +1,7 @@
 package it.uniroma3.ps2017.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,8 +34,9 @@ public class OperaController {
 	}
 	
 	@RequestMapping(value="/caricaOpera", method=RequestMethod.POST)
-	public String doCaricaOpera(@ModelAttribute("opera") Opera opera){
-		operaService.save(opera);
+	public String doCaricaOpera(@ModelAttribute("opera") Opera opera, HttpServletRequest request){
+		Integer autoreId = Integer.parseInt(request.getParameter("autoreId"));
+		operaService.save(opera, autoreId);
 		return "redirect:/caricaOpera.html?success=true";
 	}
 

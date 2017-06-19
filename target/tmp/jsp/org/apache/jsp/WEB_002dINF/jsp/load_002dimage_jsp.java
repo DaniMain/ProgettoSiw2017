@@ -143,18 +143,18 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
           out.write("\r\n");
           out.write("\t</div>\r\n");
           out.write("\t<div class=\"form-group\">\r\n");
-          out.write("\t\t<label for=\"autore\">Autore</label> <select multiple\r\n");
-          out.write("\t\t\tclass=\"form-control\">\r\n");
+          out.write("\t\t<label for=\"autore\">Autore</label>\r\n");
+          out.write("\t\t<select class=\"form-control\" name=\"autoreId\" multiple>\r\n");
+          out.write("\t\t\t");
+          out.write("\r\n");
           out.write("\t\t\t");
           if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
             return true;
           out.write("\r\n");
           out.write("\t\t</select>\r\n");
           out.write("\t</div>\r\n");
-          out.write("\t</div>\r\n");
           out.write("\t<div class=\"form-group\">\r\n");
-          out.write("\t\t<label for=\"image\">Immagine da caricare</label> <input type=\"file\"\r\n");
-          out.write("\t\t\tpath=\"image\">\r\n");
+          out.write("\t\t<label for=\"image\">Immagine da caricare</label> <input type=\"file\">\r\n");
           out.write("\t</div>\r\n");
           out.write("\t<br>\r\n");
           out.write("\t<input type=\"submit\" value=\"Pubblica\" class=\"btn btn-log btn-primary\" />\r\n");
@@ -330,7 +330,7 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${autori }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${autori}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_0.setVar("autore");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
@@ -338,11 +338,14 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t<option>");
+          out.write("\t\t\t\t<option value=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${autore.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write('"');
+          out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${autore.nome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(' ');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${autore.cognome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</option>\r\n");
+          out.write("<option>\r\n");
           out.write("\t\t\t");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

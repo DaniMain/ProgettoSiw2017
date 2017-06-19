@@ -33,17 +33,16 @@
 			placeholder="Dimensioni" />
 	</div>
 	<div class="form-group">
-		<label for="autore">Autore</label> <select multiple
-			class="form-control">
-			<c:forEach items="${autori }" var="autore">
-				<option>${autore.nome} ${autore.cognome}</option>
+		<label for="autore">Autore</label>
+		<select class="form-control" name="autoreId" multiple>
+			<%-- <form:options items="${autori}" itemLabel="cognome" itemValue="id" /> --%>
+			<c:forEach items="${autori}" var="autore">
+				<option value="${autore.id}">${autore.nome} ${autore.cognome}<option>
 			</c:forEach>
 		</select>
 	</div>
-	</div>
 	<div class="form-group">
-		<label for="image">Immagine da caricare</label> <input type="file"
-			path="image">
+		<label for="image">Immagine da caricare</label> <input type="file">
 	</div>
 	<br>
 	<input type="submit" value="Pubblica" class="btn btn-log btn-primary" />
