@@ -48,4 +48,16 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/load-author.jsp" />
 		<put-attribute name="current" value="load-author" />
 	</definition>
+	
+	<definition name="brows-author" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-author.jsp" />
+		<put-attribute name="current" value="brows-author" />
+	</definition>
+	
+		<definition name="author-detail" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/author-details.jsp" />
+		<put-attribute name="current" value="author-detail" />
+	</definition>
 </tiles-definitions>

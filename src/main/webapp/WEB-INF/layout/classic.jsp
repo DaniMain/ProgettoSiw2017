@@ -89,7 +89,8 @@
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Naviga per<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Autore dell'opera</a></li>
+										<li class="${current == 'brows-author' ? 'active' : ''}"><a 
+											href='<spring:url value="/autoriOpera.html"/>'>Autore dell'opera</a></li>
 										<li><a href="#">Anno di realizzazione</a></li>
 										<li><a href="#">Tecnica</a></li>
 									</ul></li>

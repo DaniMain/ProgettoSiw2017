@@ -20,6 +20,10 @@ public class AutoreService {
 	public void save(Autore autore){
 		autoreRepository.save(autore);
 	}
+	
+	public Autore findOne(int id){
+		return autoreRepository.findOne(id);
+	}
 
 	public List<Autore> findAll() {
 		return autoreRepository.findAll();
