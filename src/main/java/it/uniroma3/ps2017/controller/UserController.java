@@ -1,6 +1,7 @@
 package it.uniroma3.ps2017.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -52,6 +53,9 @@ public class UserController {
 		if(result.hasErrors()){
 			return "user-register";
 		}
+		if(usernameNonValido(user, utenteService)){
+			return "redirect:/register.html?duplicato=true";
+		}
 		String password1 = request.getParameter("password1");
 		if(user.getPassword().equals(password1)){
 			utenteService.save(user);
@@ -65,6 +69,15 @@ public class UserController {
 		String nome = principal.getName();
 		model.addAttribute("user", utenteService.findByUsername(nome));
 		return "user-detail";
+	}
+
+	private boolean usernameNonValido(Utente user, UtenteService utenteService) {
+		List<Utente> utentiRegistrati = utenteService.findAll();
+		for(Utente u : utentiRegistrati){
+			if(user.getUsername().equals(u.getUsername()))
+				return true;
+		}
+		return false;
 	}
 
 }

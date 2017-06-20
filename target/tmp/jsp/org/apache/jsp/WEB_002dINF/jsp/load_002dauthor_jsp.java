@@ -68,6 +68,7 @@ public final class load_002dauthor_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<center>\r\n");
       out.write("\t<h1>Inserisci un nuovo autore</h1>\r\n");
       out.write("</center>\r\n");

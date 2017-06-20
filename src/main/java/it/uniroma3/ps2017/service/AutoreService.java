@@ -28,4 +28,8 @@ public class AutoreService {
 		return autoreRepository.findOne(id);
 	}
 
+	public void delete(int id) {
+		autoreRepository.delete(id);
+	}
+
 }

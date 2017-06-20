@@ -54,5 +54,17 @@ public class AutoreController {
 		model.addAttribute("opera", operaService.findOne(id));
 		return "opera-detail";
 	}
+	
+	@RequestMapping("/autoriOpera/cancella/{id}")
+	public String cancellaAutore(@PathVariable int id){
+		autoreService.delete(id);
+		return "redirect:/autoriOpera.html?success=true";
+	}
+	
+	@RequestMapping("/autoriOpera/Opera/cancella/{operaId}-{autoreId}")
+	public String cancellaOpera(@PathVariable int operaId, @PathVariable int autoreId){
+		operaService.delete(operaId,autoreId);
+		return "redirect:/autoriOpera/{autoreId}.html?success=true";
+	}
 
 }

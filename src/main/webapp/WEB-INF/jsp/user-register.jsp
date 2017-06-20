@@ -12,6 +12,10 @@
 		<div class="alert alert-success">Registrazione avvenuta con	successo!</div>
 	</c:if>
 	
+	<c:if test="${param.duplicato eq true}">
+		<div class="alert alert-warning">Username già presente. Prova con un altro</div>
+	</c:if>
+	
 	<c:if test="${param.success eq false}">
 		<div class="alert alert-warning">Password diverse</div>
 	</c:if>

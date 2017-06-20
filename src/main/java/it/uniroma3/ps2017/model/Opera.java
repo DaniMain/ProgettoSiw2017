@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.URL;
+
 @Entity
 public class Opera {
 	
@@ -18,6 +20,8 @@ public class Opera {
 	@Size(min=1,message="deve essere non vuoto")
 	private String tecnica;
 	private String dimensioni;
+	@URL
+	private String url;
 	@ManyToOne
 	private Autore autore;
 	
@@ -56,6 +60,12 @@ public class Opera {
 	}
 	public void setAutore(Autore autore) {
 		this.autore = autore;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

@@ -71,6 +71,7 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<center>\r\n");
       out.write("\t<h1>Carica una nuova opera</h1>\r\n");
       out.write("</center>\r\n");
@@ -154,7 +155,11 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
           out.write("\t\t</select>\r\n");
           out.write("\t</div>\r\n");
           out.write("\t<div class=\"form-group\">\r\n");
-          out.write("\t\t<label for=\"image\">Immagine da caricare</label> <input type=\"file\">\r\n");
+          out.write("\t\t<label for=\"dimensioni\">Url</label>\r\n");
+          out.write("\t\t");
+          if (_jspx_meth_form_input_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_form_form_0, _jspx_page_context, _jspx_push_body_count_form_form_0))
+            return true;
+          out.write("\r\n");
           out.write("\t</div>\r\n");
           out.write("\t<br>\r\n");
           out.write("\t<input type=\"submit\" value=\"Pubblica\" class=\"btn btn-log btn-primary\" />\r\n");
@@ -362,6 +367,35 @@ public final class load_002dimage_jsp extends org.apache.jasper.runtime.HttpJspB
     } finally {
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_form_input_4(javax.servlet.jsp.tagext.JspTag _jspx_th_form_form_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_form_form_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  form:input
+    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_input_4 = (org.springframework.web.servlet.tags.form.InputTag) _jspx_tagPool_form_input_type_placeholder_path_class_nobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
+    _jspx_th_form_input_4.setPageContext(_jspx_page_context);
+    _jspx_th_form_input_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_form_0);
+    _jspx_th_form_input_4.setDynamicAttribute(null, "type", new String("url"));
+    _jspx_th_form_input_4.setDynamicAttribute(null, "class", new String("form-control"));
+    _jspx_th_form_input_4.setPath("url");
+    _jspx_th_form_input_4.setDynamicAttribute(null, "placeholder", new String("Url dell'immagine"));
+    int[] _jspx_push_body_count_form_input_4 = new int[] { 0 };
+    try {
+      int _jspx_eval_form_input_4 = _jspx_th_form_input_4.doStartTag();
+      if (_jspx_th_form_input_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_form_input_4[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_form_input_4.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_form_input_4.doFinally();
+      _jspx_tagPool_form_input_type_placeholder_path_class_nobody.reuse(_jspx_th_form_input_4);
     }
     return false;
   }

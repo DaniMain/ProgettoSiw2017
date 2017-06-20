@@ -13,7 +13,7 @@
 		<c:forEach items="${anni}" var="anno">
 			<tr>
 				<td><a href='<spring:url value="/anniOpere/${anno}.html" />'>
-						${anno} </a></td>
+					${anno} </a></td>
 			</tr>
 		</c:forEach>
 	</table>

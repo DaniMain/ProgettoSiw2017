@@ -38,4 +38,13 @@ public class OperaService {
 		return operaRepository.findAll();
 	}
 
+	public void delete(int operaId, int autoreId) {
+		Opera opera = operaRepository.findOne(operaId);
+		Autore autore = autoreRepository.findOne(autoreId);
+		List<Opera> opere = autore.getOpere();
+		opere.remove(opera);
+		autore.setOpere(opere);
+		operaRepository.delete(operaId);
+	}
+
 }

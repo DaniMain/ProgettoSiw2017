@@ -84,4 +84,22 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/brows-anno.jsp" />
 		<put-attribute name="current" value="brows-anno" />
 	</definition>
+	
+	<definition name="anno-details" extends="common">
+		<put-attribute name="title" value="Opere nell'anno" />
+		<put-attribute name="body" value="/WEB-INF/jsp/anno-details.jsp" />
+		<put-attribute name="current" value="anno-details" />
+	</definition>
+	
+	<definition name="brows-tecnica" extends="common">
+		<put-attribute name="title" value="Tecniche delle opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-tecnica.jsp" />
+		<put-attribute name="current" value="brows-tecnica" />
+	</definition>
+	
+	<definition name="tecnica-details" extends="common">
+		<put-attribute name="title" value="Opere con tecnica" />
+		<put-attribute name="body" value="/WEB-INF/jsp/tecnica-details.jsp" />
+		<put-attribute name="current" value="tecnica-details" />
+	</definition>
 </tiles-definitions>

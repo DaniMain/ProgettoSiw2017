@@ -42,7 +42,9 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label for="image">Immagine da caricare</label> <input type="file">
+		<label for="dimensioni">Url</label>
+		<form:input type="url" class="form-control" path="url"
+			placeholder="Url dell'immagine" />
 	</div>
 	<br>
 	<input type="submit" value="Pubblica" class="btn btn-log btn-primary" />

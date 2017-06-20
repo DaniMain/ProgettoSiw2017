@@ -49,6 +49,7 @@
 <!-- Per non creare problemi con la caruosel e la navbar si adotta questo template -->
 <link href="http://getbootstrap.com/examples/carousel/carousel.css"
 	rel="stylesheet">
+<!-- <link rel="stylesheet" href="../templated-introspect/assets/css/font-awesome.min.css" type="text/css"> -->
 </head>
 
 <body>
@@ -92,7 +93,8 @@
   											href='<spring:url value="/autoriOpera.html"/>'>Autore dell'opera</a></li>
 										<li class="${current == 'brows-anno' ? 'active' : ''}"><a
 											href='<spring:url value="/anniOpere.html"/>'>Anno di realizzazione</a></li>
-										<li><a href="#">Tecnica</a></li>
+										<li class="${current == 'brows-tecnica' ? 'active' : ''}"><a
+											href='<spring:url value="/tecnicaOpere.html"/>'>Tecnica</a></li>
 										<li class="${current == 'search' ? 'active' : ''}"><a
 											href='<spring:url value="/cerca.html"/>'>Cerca</a></li>
 									</ul></li>
