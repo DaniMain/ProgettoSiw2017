@@ -1,6 +1,7 @@
 package it.uniroma3.ps2017.model;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -88,6 +89,18 @@ public class Autore {
 
 	public void setOpere(List<Opera> opere) {
 		this.opere = opere;
+	}
+
+	public void setDataNascita(int giorno, int mese, int anno) {
+		GregorianCalendar date = new GregorianCalendar();
+		date.set(anno, mese-1, giorno);
+		this.setDataNascita(date.getTime());
+	}
+
+	public void setDataMorte(int giorno, int mese, int anno) {
+		GregorianCalendar date = new GregorianCalendar();
+		date.set(anno, mese-1, giorno);
+		this.setDataMorte(date.getTime());
 	}
 
 }
