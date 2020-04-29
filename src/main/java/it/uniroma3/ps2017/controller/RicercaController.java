@@ -48,10 +48,10 @@ public class RicercaController {
 		List<Opera> opere = operaService.findAll();
 		List<Opera> ris = new ArrayList<Opera>();
 		for (Opera o : opere){
-			if(o.getTitolo().toLowerCase().equals(chiave)){
+			if(cercaInTitolo(o.getTitolo().toLowerCase(), chiave)){
 				ris.add(o);
 			}
-			else if (o.getTecnica().toLowerCase().equals(chiave)){
+			else if (cercaInTecnica(o.getTecnica().toLowerCase(), chiave)){
 				ris.add(o);
 			}
 			else if (o.getDimensioni().toLowerCase().equals(chiave)){
@@ -77,11 +77,38 @@ public class RicercaController {
 			else if(a.getCognome().toLowerCase().equals(chiave)){
 				ris.add(a);
 			}
+			else if((a.getNome()+" "+a.getCognome()).equals(chiave)) {
+				ris.add(a);
+			}
 			else if(a.getNazione().toLowerCase().equals(chiave)){
 				ris.add(a);
 			}
 		}
 		return ris;
+	}
+	
+	private boolean cercaInTitolo(String titolo, String chiave) {
+		if (titolo.equals(chiave)) {
+			return true;
+		}
+		for(String parola: titolo.split(" ")) {
+			if(parola.equals(chiave)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean cercaInTecnica(String tecnica, String chiave) {
+		if (tecnica.equals(chiave)) {
+			return true;
+		}
+		for(String parola: tecnica.split(" ")) {
+			if(parola.equals(chiave)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

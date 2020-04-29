@@ -1,5 +1,6 @@
 package it.uniroma3.ps2017.service;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,16 @@ public class AutoreService {
 	}
 
 	public List<Autore> findAll() {
-		return autoreRepository.findAll();
+		List<Autore> autori = autoreRepository.findAll();
+		autori.sort(
+			new Comparator<Autore>() {
+				@Override
+				public int compare(Autore a1, Autore a2) {
+					return a1.getCognome().compareTo(a2.getCognome());
+				} 
+			}
+		);
+		return autori;
 	}
 	
 	public Autore findOne(int id){

@@ -8,18 +8,13 @@
 
 <br>
 
-<table class="table table-bordered table-hover table-striped">
-	<thead>
-		<tr>
-			<th>Utenti registrati</th>
-		</tr>
-	</thead>
+<table class="table table-hover table-striped">
 	<tbody>
 		<c:forEach items="${users}" var="user">
 			<tr>
 				<td>
-					<a href='<spring:url value="/users/${user.id }.html" />'>
-						${user.username }
+					<a href='<spring:url value="/users/${user.id}.html" />'>
+						<c:out value="${user.username}"/>
 					</a>
 				</td>
 			</tr>

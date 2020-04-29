@@ -4,16 +4,17 @@
 
 <h1>Scegli la tecnica</h1>
 
+<br>
+
 <div role="tabpanel" class="tab-pane active" id="opere">
 
-	<br>
-
 	<table
-		class="table table-bordered table-hover table-striped table-condensed">
+		class="table table-hover table-striped">
 		<c:forEach items="${tecniche}" var="tecnica">
 			<tr>
-				<td><a href='<spring:url value="/tecnicheOpere/${tecnica}.html" />'>
-					${tecnica} </a></td>
+				<td>
+					<a href='<spring:url value="/tecnicheOpere/${tecnica}.html" />'><c:out value="${tecnica}"/></a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

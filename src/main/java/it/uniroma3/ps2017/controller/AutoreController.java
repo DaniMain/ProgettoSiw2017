@@ -3,6 +3,7 @@ package it.uniroma3.ps2017.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +33,10 @@ public class AutoreController {
 	}
 	
 	@RequestMapping(value="/caricaAutore", method=RequestMethod.POST)
-	public String doCaricaAutore(@ModelAttribute("autore") Autore autore){
+	public String doCaricaAutore(@ModelAttribute("autore") Autore autore, BindingResult result){
+		if(result.hasErrors()) {
+			return showCaricaAutore();
+		}
 		autoreService.save(autore);
 		return "redirect:/caricaAutore.html?success=true";
 	}

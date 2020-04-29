@@ -35,7 +35,7 @@ public class OperaController {
 	@RequestMapping("/caricaOpera")
 	public String showCaricaOpera(Model model){
 		model.addAttribute("autori", autoreService.findAll());
-		return "load-image";
+		return "load-opera";
 	}
 	
 	@RequestMapping(value="/caricaOpera", method=RequestMethod.POST)

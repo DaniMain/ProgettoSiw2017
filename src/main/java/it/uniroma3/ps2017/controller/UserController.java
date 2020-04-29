@@ -3,7 +3,6 @@ package it.uniroma3.ps2017.controller;
 import java.security.Principal;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,21 +46,22 @@ public class UserController {
 	}
 
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String doRegister(@Valid @ModelAttribute("user") Utente user, HttpServletRequest request, 
-			BindingResult result){
-		
+	public String doRegister(@Valid @ModelAttribute("user") Utente user, BindingResult result, Model model){
 		if(result.hasErrors()){
+			model.addAttribute("success", false);
 			return "user-register";
 		}
 		if(usernameNonValido(user, utenteService)){
 			return "redirect:/register.html?duplicato=true";
 		}
-		String password1 = request.getParameter("password1");
-		if(user.getPassword().equals(password1)){
-			utenteService.save(user);
-			return "redirect:/register.html?success=true";
-		}
-		return "redirect:/register.html?success=false";
+//		String password1 = request.getParameter("password1");
+//		if(user.getPassword().equals(password1)){
+//			utenteService.save(user);
+//			return "redirect:/register.html?success=true";
+//		}
+//		return "redirect:/register.html?success=false";
+		utenteService.save(user);
+		return "redirect:/register.html?success=true";
 	}
 
 	@RequestMapping("/account")

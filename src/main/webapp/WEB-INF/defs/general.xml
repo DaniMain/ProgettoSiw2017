@@ -37,10 +37,10 @@
 		<put-attribute name="current" value="register" />
 	</definition>
 	
-	<definition name="load-image" extends="common">
+	<definition name="load-opera" extends="common">
 		<put-attribute name="title" value="Caricamento opera" />
-		<put-attribute name="body" value="/WEB-INF/jsp/load-image.jsp" />
-		<put-attribute name="current" value="load-image" />
+		<put-attribute name="body" value="/WEB-INF/jsp/load-opera.jsp" />
+		<put-attribute name="current" value="load-opera" />
 	</definition>
 	
 	<definition name="load-author" extends="common">
