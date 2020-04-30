@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/security/spring-security.xsd" >
 		
 	<http use-expressions="true">
-		<csrf disabled="true"/>
+		<!-- <csrf disabled="true"/> -->
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')"/>
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')"/>
 		<intercept-url pattern="/carica**" access="hasRole('ROLE_ADMIN')"/>

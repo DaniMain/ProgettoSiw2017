@@ -22,7 +22,7 @@ public class OperaService {
 	private AutoreRepository autoreRepository;
 
 	public void save(Opera opera, Integer id) {
-		Autore autore = autoreRepository.findOne(id);
+		Autore autore = autoreRepository.findById(id).orElse(null);
 		opera.setAutore(autore);
 		List<Opera> opere = autore.getOpere();
 		opere.add(opera);
@@ -31,7 +31,7 @@ public class OperaService {
 	}
 	
 	public Opera findOne(int id) {
-		return operaRepository.findOne(id);
+		return operaRepository.findById(id).orElse(null);
 	}
 
 	public List<Opera> findAll() {
@@ -39,12 +39,12 @@ public class OperaService {
 	}
 
 	public void delete(int operaId, int autoreId) {
-		Opera opera = operaRepository.findOne(operaId);
-		Autore autore = autoreRepository.findOne(autoreId);
+		Opera opera = operaRepository.findById(operaId).orElse(null);
+		Autore autore = autoreRepository.findById(autoreId).orElse(null);
 		List<Opera> opere = autore.getOpere();
 		opere.remove(opera);
 		autore.setOpere(opere);
-		operaRepository.delete(operaId);
+		operaRepository.deleteById(operaId);
 	}
 
 }

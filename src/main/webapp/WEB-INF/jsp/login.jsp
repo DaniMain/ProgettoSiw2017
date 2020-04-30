@@ -51,11 +51,10 @@
 	<center>
 		<h2 class="form-signin-heading">Inserisci le tue credenziali</h2>
 	</center>
-	<form class="form-signin" role="form"
-		action='<spring:url value="/login" />' method="post">
-		<input type="text" name="username" class="form-control"
-			placeholder="username" required autofocus> <input
-			type="password" name="password" class="form-control"
+	<form class="form-signin" role="form" action='<spring:url value="/j_spring_security_check" />' method="post">
+		<input type="text" name="j_username" class="form-control"
+			placeholder="username" required autofocus>
+		<input type="password" name="j_password" class="form-control"
 			placeholder="password" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Entra</button>
 	</form>

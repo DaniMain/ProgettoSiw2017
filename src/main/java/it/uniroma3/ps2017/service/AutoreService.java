@@ -35,11 +35,11 @@ public class AutoreService {
 	}
 	
 	public Autore findOne(int id){
-		return autoreRepository.findOne(id);
+		return autoreRepository.findById(id).orElse(null);
 	}
 
 	public void delete(int id) {
-		autoreRepository.delete(id);
+		autoreRepository.deleteById(id);
 	}
 
 }

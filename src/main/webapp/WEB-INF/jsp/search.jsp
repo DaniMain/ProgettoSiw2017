@@ -15,7 +15,7 @@
 	</div>
 </c:if>
 
-<form action="/cerca.html" method="post">
+<form action="<spring:url value="/cerca.html" />" method="post">
 
 	<div class="form-group">
 		<label for="chiave">Inserisci una parola chiave:</label> <input

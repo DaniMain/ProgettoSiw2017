@@ -27,7 +27,7 @@ public class UtenteService {
 	}
 
 	public Utente findOne(int id) {
-		return utenteRepository.findOne(id);
+		return utenteRepository.findById(id).orElse(null);
 	}
 
 	public void save(Utente user) {
