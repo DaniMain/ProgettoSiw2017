@@ -9,7 +9,7 @@
 <form:form modelAttribute="opera" cssClass="form-horizontal operaForm">
 
 	<c:if test="${param.success eq true}">
-		<div class="alert alert-success"><center>Caricamento completato</center></div>
+		<div class="alert alert-success" style="text-align: center;">Caricamento completato</div>
 	</c:if>
 
 	<div class="form-group">
@@ -60,6 +60,7 @@ $(document).ready(function(){
 					minlength: 1
 				},
 				anno: {
+					required: true,
 					minlength: 1,
 					maxlength: 4,
 					digits: true
@@ -81,16 +82,17 @@ $(document).ready(function(){
 				}
 			},
 			highlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				$(element).closest('.form-group').removeClass('has-success').addClass('has-error').css({"color": "red"});
 			},
 			unhighlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				$(element).closest('.form-group').removeClass('has-error').addClass('has-success').css({"color": "green"});
 			},
 			messages: {
 				titolo: {
 					required: "titolo obbligatorio"
 				},
 				anno: {
+					required: "anno di composizione obbligatorio",
 					minlength: "anno non valido",
 					maxlength: "anno non valido",
 					digits: "l'anno deve essere numerico"

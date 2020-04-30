@@ -9,9 +9,7 @@
 
 <c:if test="${param.success eq true}">
 	<br>
-	<div class="alert alert-danger">
-		<center>Autore rimosso</center>
-	</div>
+	<div class="alert alert-danger" style="text-align: center;">Autore rimosso</div>
 	<br>
 	<br>
 </c:if>

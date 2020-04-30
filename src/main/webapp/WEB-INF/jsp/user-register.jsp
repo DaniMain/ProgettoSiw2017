@@ -12,57 +12,57 @@
 <form:form modelAttribute="user" cssClass="form-horizontal registrationForm">
 
 	<c:if test="${param.success eq true}">
-		<div class="alert alert-success">Registrazione avvenuta con	successo!</div>
+		<div class="alert alert-success" style="text-align: center;">Registrazione avvenuta con	successo!</div>
 	</c:if>
 	<c:if test="${param.duplicato eq true}">
-		<div class="alert alert-warning">Username già esistente</div>
+		<div class="alert alert-warning" style="text-align: center;">Username già esistente</div>
 	</c:if>
 	<c:if test="${param.success eq false}">
-		<div class="alert alert-warning">Ci sono degli errori da correggere</div>
+		<div class="alert alert-warning" style="text-align: center;">Ci sono degli errori da correggere</div>
 	</c:if>
 
-	<div class="form-group">
-		<label for="username" class="col-sm-2 control-label">Username: </label>
+	<div class="form-group row">
+		<label for="username" class="col-sm-2 col-form-label">Username:</label>
 		<div class="col-sm-10">
 			<form:input path="username" cssClass="form-control" />
 			<form:errors path="username" />
 		</div>
 	</div>
 	
-	<div class="form-group">
-		<label for="nome" class="col-sm-2 control-label">Nome:</label>
+	<div class="form-group row">
+		<label for="nome" class="col-sm-2 col-form-label">Nome:</label>
 		<div class="col-sm-10">
 			<form:input path="nome" cssClass="form-control" />
 			<form:errors path="nome" />
 		</div>
 	</div>
 	
-	<div class="form-group">
-		<label for="cognome" class="col-sm-2 control-label">Cognome:</label>
+	<div class="form-group row">
+		<label for="cognome" class="col-sm-2 col-form-label">Cognome:</label>
 		<div class="col-sm-10">
 			<form:input path="cognome" cssClass="form-control" />
 			<form:errors path="cognome" />
 		</div>
 	</div>
 
-	<div class="form-group">
-		<label for="dataNascita" class="col-sm-2 control-label">Data di nascita:</label>
+	<div class="form-group row">
+		<label for="dataNascita" class="col-sm-2 col-form-label">Data di nascita:</label>
 		<div class="col-sm-10">
 			<form:input path="dataNascita" cssClass="form-control" placeholder="mm/gg/aaaa" />
 			<form:errors path="dataNascita" />
 		</div>
 	</div>
 	
-	<div class="form-group">
-		<label for="password" class="col-sm-2 control-label">Password:</label>
+	<div class="form-group row">
+		<label for="password" class="col-sm-2 col-form-label">Password:</label>
 		<div class="col-sm-10">
 			<form:password path="password" cssClass="form-control" />
 			<form:errors path="password" />
 		</div>
 	</div>
 	
-	<div class="form-group">
-		<label for="password" class="col-sm-2 control-label">Conferma password:</label>
+	<div class="form-group row">
+		<label for="password" class="col-sm-2 col-form-label">Conferma password:</label>
 		<div class="col-sm-10">
 			<input type="password" name="password_again" id="password_again" class="form-control" />
 		</div>
@@ -75,13 +75,15 @@
 		</div>
 	</div> -->
 	
-	<div class="form-group">
+	<div class="form-group row" style="float: right;">
 		<div class="col-sm-offset-2 col-sm-10">
 			<input type="submit" value="Registrati" class="btn btn-log btn-primary" />
 		</div>
 	</div>
 	
 </form:form>
+<br>
+<br>
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".registrationForm").validate(
@@ -113,10 +115,10 @@ $(document).ready(function(){
 				}
 			},
 			highlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				$(element).closest('.form-group').removeClass('has-success').addClass('has-error').css({"color": "red"});
 			},
 			unhighlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				$(element).closest('.form-group').removeClass('has-error').addClass('has-success').css({"color": "green"});
 			},
 			messages: {
 				username: {

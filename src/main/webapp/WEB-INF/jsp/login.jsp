@@ -44,13 +44,11 @@
 }
 </style>
 
-<div class="container">
+<div class="container" style="text-align: center;">
 	<%-- <c:if test="${param.success eq false }">
 		<div class="alert">Username or password wrong</div>
 	</c:if> --%>
-	<center>
-		<h2 class="form-signin-heading">Inserisci le tue credenziali</h2>
-	</center>
+	<h2 class="form-signin-heading">Inserisci le tue credenziali</h2>
 	<form class="form-signin" role="form" action='<spring:url value="/j_spring_security_check" />' method="post">
 		<input type="text" name="j_username" class="form-control"
 			placeholder="username" required autofocus>

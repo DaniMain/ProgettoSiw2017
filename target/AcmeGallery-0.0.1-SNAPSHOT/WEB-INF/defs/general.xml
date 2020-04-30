@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="common" template="/WEB-INF/layout/classic.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+
+	<definition name="index" extends="common">
+		<put-attribute name="title" value="AcmeGallery" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+		<put-attribute name="current" value="index" />
+	</definition>
+	
+	<definition name="login" extends="common">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+		<put-attribute name="current" value="login" />
+	</definition>
+	
+	<definition name="users" extends="common">
+		<put-attribute name="title" value="Utenti" />
+		<put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
+		<put-attribute name="current" value="users" />
+	</definition>
+	
+	<definition name="user-detail" extends="common">
+		<put-attribute name="title" value="Utenti" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user-details.jsp" />
+		<put-attribute name="current" value="user-detail" />
+	</definition>
+	
+	<definition name="user-register" extends="common">
+		<put-attribute name="title" value="User registration" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user-register.jsp" />
+		<put-attribute name="current" value="register" />
+	</definition>
+	
+	<definition name="load-opera" extends="common">
+		<put-attribute name="title" value="Caricamento opera" />
+		<put-attribute name="body" value="/WEB-INF/jsp/load-opera.jsp" />
+		<put-attribute name="current" value="load-opera" />
+	</definition>
+	
+	<definition name="load-author" extends="common">
+		<put-attribute name="title" value="Inserimento autore" />
+		<put-attribute name="body" value="/WEB-INF/jsp/load-author.jsp" />
+		<put-attribute name="current" value="load-author" />
+	</definition>
+	
+	<definition name="search" extends="common">
+		<put-attribute name="title" value="Cerca" />
+		<put-attribute name="body" value="/WEB-INF/jsp/search.jsp" />
+		<put-attribute name="current" value="search" />
+	</definition>
+	
+	<definition name="search-results" extends="common">
+		<put-attribute name="title" value="Risultati ricerca" />
+		<put-attribute name="body" value="/WEB-INF/jsp/search-results.jsp" />
+		<put-attribute name="current" value="search-results" />
+	</definition>
+		
+	<definition name="brows-author" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-author.jsp" />
+		<put-attribute name="current" value="brows-author" />
+	</definition>
+	
+	<definition name="author-detail" extends="common">
+		<put-attribute name="title" value="Autori" />
+		<put-attribute name="body" value="/WEB-INF/jsp/author-detail.jsp" />
+		<put-attribute name="current" value="author-detail" />
+	</definition>
+	
+	<definition name="opera-detail" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/opera-detail.jsp" />
+		<put-attribute name="current" value="opera-detail" />
+	</definition>
+	
+	<definition name="brows-anno" extends="common">
+		<put-attribute name="title" value="Opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-anno.jsp" />
+		<put-attribute name="current" value="brows-anno" />
+	</definition>
+	
+	<definition name="anno-details" extends="common">
+		<put-attribute name="title" value="Opere nell'anno" />
+		<put-attribute name="body" value="/WEB-INF/jsp/anno-details.jsp" />
+		<put-attribute name="current" value="anno-details" />
+	</definition>
+	
+	<definition name="brows-tecnica" extends="common">
+		<put-attribute name="title" value="Tecniche delle opere" />
+		<put-attribute name="body" value="/WEB-INF/jsp/brows-tecnica.jsp" />
+		<put-attribute name="current" value="brows-tecnica" />
+	</definition>
+	
+	<definition name="tecnica-details" extends="common">
+		<put-attribute name="title" value="Opere con tecnica" />
+		<put-attribute name="body" value="/WEB-INF/jsp/tecnica-details.jsp" />
+		<put-attribute name="current" value="tecnica-details" />
+	</definition>
+</tiles-definitions>

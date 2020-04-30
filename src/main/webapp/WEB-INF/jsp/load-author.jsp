@@ -9,7 +9,7 @@
 <form:form modelAttribute="autore" cssClass="form-horizontal authorForm">
 
 	<c:if test="${param.success eq true}">
-		<div class="alert alert-success"><center>Autore inserito!</center></div>
+		<div class="alert alert-success" style="text-align: center;">Autore inserito!</div>
 	</c:if>
 
 	<div class="form-group">
@@ -66,10 +66,10 @@ $(document).ready(function(){
 				}
 			},
 			highlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				$(element).closest('.form-group').removeClass('has-success').addClass('has-error').css({"color": "red"});
 			},
 			unhighlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				$(element).closest('.form-group').removeClass('has-error').addClass('has-success').css({"color": "green"});
 			},
 			messages: {
 				nome: {

@@ -10,9 +10,7 @@
 <br>
 
 <c:if test="${param.success eq false}">
-	<div class="alert alert-danger">
-		<center>Nessun risultato</center>
-	</div>
+	<div class="alert alert-danger" style="text-align: center;">Nessun risultato</div>
 </c:if>
 
 <form action="<spring:url value="/cerca.html" />" method="post">
@@ -23,9 +21,9 @@
 	</div>
 
 	<br>
-
-	<center>
+	
+	<div style="text-align: center;">
 		<input type="submit" value="Cerca" class="btn btn-log btn-primary" />
-	</center>
+	</div>
 
 </form>
