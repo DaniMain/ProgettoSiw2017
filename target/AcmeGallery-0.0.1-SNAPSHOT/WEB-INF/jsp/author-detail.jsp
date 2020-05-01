@@ -67,31 +67,67 @@
 
 		<br>
 	
-		<c:if test="${autore.opere.isEmpty()}">
-			Al momento non ci sono opere di questo autore
-		</c:if>
-
-		<table	class="table-hover table-striped table-condensed" >
-			<c:forEach items="${autore.opere}" var="opera">
-				<tr>
-					<td align="center" width="128">
-						<a href='<spring:url value="/autoriOpera/Opera/${opera.id }.html" />'>
-							<img src="${opera.url }" alt="${opera.titolo}" height="100" style="max-width: 512px;"/>
-						</a>
-					</td>
-					<td>
-						<a href='<spring:url value="/autoriOpera/Opera/${opera.id}.html" />'><c:out value="${opera.titolo}"/></a>
-					</td>
-					<security:authorize access="hasRole('ROLE_ADMIN')">
-						<td align="right">
-							<a href='<spring:url value="/autoriOpera/Opera/cancella/${opera.id}-${autore.id }.html" />'>
-								<input type="submit" value="Rimuovi opera" class="btn btn-danger btn-primary" />
+		<c:if test="${!opereInTerzine.isEmpty()}">
+			<!-- <table	class="table-hover table-striped table-condensed" >
+				<c:forEach items="${opereTutte}" var="opera">
+					<tr>
+						<td align="center" width="128">
+							<a href='<spring:url value="/autoriOpera/Opera/${opera.id}.html" />'>
+								<img src="${opera.url}" alt="${opera.titolo}" height="100" style="max-width: 512px;"/>
 							</a>
 						</td>
-					</security:authorize>
-				</tr>
-			</c:forEach>
-		</table>
+						<td>
+							<a href='<spring:url value="/autoriOpera/Opera/${opera.id}.html" />'><c:out value="${opera.titolo}"/></a>
+						</td>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<td align="right">
+								<a href='<spring:url value="/autoriOpera/Opera/cancella/${opera.id}-${autore.id}.html" />'>
+									<input type="submit" value="Rimuovi opera" class="btn btn-danger btn-primary" />
+								</a>
+							</td>
+						</security:authorize>
+					</tr>
+				</c:forEach>
+			</table> -->
+			<table class="table-condensed" width="100%">
+				<c:forEach items="${opereInTerzine}" var="terzina">
+					<tr>
+						<c:forEach items="${terzina}" var="opera">
+							<td align="center">
+								<div role="tabpanel" class="tab-pane active" id="home">
+									<table class="table-condensed">
+										<tbody>
+											<tr>
+												<td align="center">
+													<a href='<spring:url value="/autoriOpera/Opera/${opera.id}.html" />'>
+														<img src="${opera.url}" alt="${opera.titolo}" height="150"/>
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<a href='<spring:url value="/autoriOpera/Opera/${opera.id}.html" />'><c:out value="${opera.titolo}"/></a>
+												</td>
+											</tr>
+											<security:authorize access="hasRole('ROLE_ADMIN')">
+											<tr>
+												<td align="center">
+													<a href='<spring:url value="/autoriOpera/Opera/cancella/${opera.id}-${autore.id}.html" />'>
+														<input type="submit" value="Rimuovi opera" class="btn btn-danger btn-primary" />
+													</a>
+												<td>
+											<td>										
+											</security:authorize>
+										</tbody>
+									</table>
+								</div>
+							</td>
+						</c:forEach>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:if>
+		<c:if test="${opereInTerzine.isEmpty()}">Al momento non ci sono opere di questo autore</c:if>
 	</div>
 
 </div>

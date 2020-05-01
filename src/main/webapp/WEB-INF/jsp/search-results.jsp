@@ -8,7 +8,7 @@
 
 <br>
 
-<c:if test="${!opere.isEmpty()}">
+<c:if test="${!opereInTerzine.isEmpty()}">
 	<!-- 
 	<table class="table table-hover table-striped table-condensed">
 		<thead>

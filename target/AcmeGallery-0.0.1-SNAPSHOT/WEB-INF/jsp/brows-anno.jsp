@@ -8,14 +8,20 @@
 
 <div role="tabpanel" class="tab-pane active" id="opere">
 
-	<table
-		class="table table-hover table-striped">
+	<table class="table table-hover table-striped">
 		<c:forEach items="${anni}" var="anno">
-			<tr>
+			<tr class='clickable-row' data-href='<spring:url value="/anniOpere/${anno}.html" />'>
 				<td>
-					<a href='<spring:url value="/anniOpere/${anno}.html" />'><c:out value="${anno}"/></a>
+					<a href="<spring:url value="/anniOpere/${anno}.html" />"><c:out value="${anno}"/></a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
 </div>
+<script>
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>
