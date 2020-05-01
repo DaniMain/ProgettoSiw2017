@@ -27,7 +27,7 @@ public class AutoreService {
 			new Comparator<Autore>() {
 				@Override
 				public int compare(Autore a1, Autore a2) {
-					return a1.getCognome().compareTo(a2.getCognome());
+					return a1.getCognome().toLowerCase().compareTo(a2.getCognome().toLowerCase());
 				} 
 			}
 		);

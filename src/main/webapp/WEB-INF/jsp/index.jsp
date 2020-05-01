@@ -31,7 +31,7 @@
 		</div>
 		<div class="carousel-item" style="height: 460px;">
 			<img class="third-slide d-block w-100"
-				src="https://www.theartpostblog.com/wp-content/uploads/2016/05/monet-impressione-levar-del-sole.jpg">
+				src="https://www.arte.it/foto/600x450/7e/24750-Monet_-_Impressione_levar_del_sole_1872.jpg">
 			<div class="container">
 				<div class="carousel-caption d-none d-md-block">
 					<h1>Iscriviti gratis</h1>

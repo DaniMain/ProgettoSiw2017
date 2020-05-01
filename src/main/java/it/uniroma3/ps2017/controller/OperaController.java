@@ -53,7 +53,7 @@ public class OperaController {
 	
 	@RequestMapping("/tecnicheOpere/{tecnica}")
 	public String mostraTecnica(Model model, @PathVariable String tecnica){
-		model.addAttribute("opereTecniche", opereConTecnica(tecnica, operaService.findAll()));
+		model.addAttribute("opereInTerzine", dividiOpereInTerzine(opereConTecnica(tecnica, operaService.findAll())));
 		return "tecnica-details";
 	}
 
@@ -65,7 +65,7 @@ public class OperaController {
 	
 	@RequestMapping("/anniOpere/{anno}")
 	public String mostraAnno(Model model, @PathVariable Integer anno){
-		model.addAttribute("opereAnno", opereInAnno(anno, operaService.findAll()));
+		model.addAttribute("opereInTerzine", dividiOpereInTerzine(opereInAnno(anno, operaService.findAll())));
 		return "anno-details";
 	}
 	
@@ -109,6 +109,27 @@ public class OperaController {
 		}
 		Collections.sort(anni);
 		return anni;
+	}
+	
+	private List<List<Opera>> dividiOpereInTerzine(List<Opera> opereTutte) {
+		if(opereTutte.isEmpty())
+			return new ArrayList<>();
+		List<List<Opera>> result = new ArrayList<>();
+		int i = 1;
+		List<Opera> terzina = new ArrayList<>();
+		for(Opera o: opereTutte) {
+			terzina.add(o);
+			if (i == 3) {
+				result.add(terzina);
+				terzina = new ArrayList<>();
+				i = 0;
+			}
+			i++;
+		}
+		if(!terzina.isEmpty()) {
+			result.add(terzina);
+		}
+		return result;
 	}
 
 }

@@ -38,7 +38,7 @@ public class RicercaController {
 		if (opere.size()==0 && autori.size()==0)
 			return "redirect:/cerca.html?success=false";
 		else{
-			model.addAttribute("opere", opere);
+			model.addAttribute("opereInTerzine", dividiOpereInTerzine(opere));
 			model.addAttribute("autori", autori);
 		}
 		return "search-results";
@@ -109,6 +109,27 @@ public class RicercaController {
 			}
 		}
 		return false;
+	}
+	
+	private List<List<Opera>> dividiOpereInTerzine(List<Opera> opereTutte) {
+		if(opereTutte.isEmpty())
+			return new ArrayList<>();
+		List<List<Opera>> result = new ArrayList<>();
+		int i = 1;
+		List<Opera> terzina = new ArrayList<>();
+		for(Opera o: opereTutte) {
+			terzina.add(o);
+			if (i == 3) {
+				result.add(terzina);
+				terzina = new ArrayList<>();
+				i = 0;
+			}
+			i++;
+		}
+		if(!terzina.isEmpty()) {
+			result.add(terzina);
+		}
+		return result;
 	}
 
 }

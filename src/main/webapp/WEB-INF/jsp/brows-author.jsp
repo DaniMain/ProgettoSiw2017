@@ -20,7 +20,7 @@
 
 <table class="table table-hover table-striped">
 	<c:forEach items="${autori}" var="autore">
-		<tr>
+		<tr class='clickable-row' data-href='<spring:url value="/autoriOpera/${autore.id}.html" />'>
 			<td>
 				<a href='<spring:url value="/autoriOpera/${autore.id}.html" />'>
 					<c:out value="${autore.nome} ${autore.cognome}"/>
@@ -38,3 +38,10 @@
 		</tr>
 	</c:forEach>
 </table>
+<script>
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>

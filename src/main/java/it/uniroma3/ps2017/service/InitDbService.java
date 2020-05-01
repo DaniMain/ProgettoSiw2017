@@ -146,7 +146,7 @@ public class InitDbService {
 		opera3.setAnno(1968);
 		opera3.setDimensioni("83x72");
 		opera3.setTecnica("pennellate forti");
-		opera3.setUrl("https://lh3.googleusercontent.com/proxy/SkaIfgaQQZiwRHU1xJZ_WXHStn7U9q7tgAdQZDBod-DSPec8Hv1Clnswf0cppIu262r1RZdzeveIO9Qu8i7TLPxkNx2iBGLOtbSLWPbSdKC8OhSy-Vro-NMLYn-q5Rs5cGY");
+		opera3.setUrl("https://www.artribune.com/wp-content/uploads/2016/09/Massimo-Campigli-Le-spose-dei-marinai-1934-696x550.jpg");
 		opereErnesto.add(opera3);
 		
 		List<Opera> opereJulio = new ArrayList<>();
